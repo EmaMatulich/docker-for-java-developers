@@ -1,0 +1,10 @@
+1 - docker ps -> show docker containers running
+2 - docker ps -a -> show all docker containers (history)
+3 - docker run mongo -> pull mongo docker image from docker hub if not present and 
+                        instanciate a container
+4 - docker run -d mongo -> the same as the command numer 3, but this time -d parameter
+                           indicates that it's going to run as a daemon or background process,
+                           if we kill the terminal, the container is still runinng
+5 - docker stop $container_id -> we stop the container with id $container_id                                                    
+6 - docker run -p 27017:27017 -d mongo -> this will start up a mongo container running in background and 
+                                          it will allow applications to talk with mongo through port 27017 

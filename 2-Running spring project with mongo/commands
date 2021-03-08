@@ -1,0 +1,4 @@
+1 - clone https://github.com/springframeworkguru/spring-boot-mongodb
+2 - start a mongo container -> docker run -p 27017:27017 -d mongo
+3 - docker logs -f $container_id to see container logs
+4- start spring application and go to localhost:8080 and persist some data

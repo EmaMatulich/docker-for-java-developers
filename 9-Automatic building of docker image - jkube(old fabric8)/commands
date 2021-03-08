@@ -1,0 +1,21 @@
+1 - Agregar el pluggin de JKUBE:    
+    <plugin>
+        <groupId>org.eclipse.jkube</groupId>
+        <artifactId>kubernetes-maven-plugin</artifactId>
+        <version>1.1.0</version>
+    </plugin>
+2 - Ejecutar ./mvnw install k8s:build
+3 - Ejecutar:
+    *docker build -t springuru . (crear imagen de docker)
+    *docker run -p 8080:8080 -d springuru (levantar container de la imagen de docker springuru)
+
+4 - Comandos opcionales: k8s:resource k8s:apply
+
+k8s:build goal will take care of building a Docker image for our application. 
+The image is Java 11 compatible and contains the generated spring-boot jar.
+
+k8s:resource goal will create our resource manifests in target/classes/META-INF/jkube/kubernetes.yml. 
+The manifests include a Deployment with a container that references the image built in the previous 
+goal and an HTTP port 8080. It also includes a Service that exposes the mentioned port.
+
+k8s:apply goal will apply the generated resource manifests to the configured cluster (similar to kubectl apply -f)

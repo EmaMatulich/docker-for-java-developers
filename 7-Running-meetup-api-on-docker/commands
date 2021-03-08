@@ -1,0 +1,8 @@
+1 - docker build -t ${image_name} .
+
+##-t means tag an image with image_name
+##the . means look in the local current durectory for a Dockerfile
+
+Build and start our docker containered api:
+1 - docker build -t meetup-backend .
+2 - docker run -d -p 8080:8080 meetupbackend

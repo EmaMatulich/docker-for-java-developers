@@ -1,0 +1,9 @@
+1 - docekr run -d centos -> no hay ningun proceso ejecutandose
+2 - docker run -d centos tail -f /dev/null -> hacemos que el container con 
+                                              centos ejecute un comando el cual nunca va a terminar
+                                              ahora si figura con "docker ps"
+3 - docker exec -it ${container_name} bash -> nos permite ejecutar un bash en el container
+                                              -it(interactive mode)
+4 - java -version -> verificamos que java no esta instalado    
+5 - yum install java -> instalamos la open jdk default del momento para centos
+6 - java -version -> verificamos que java este instalado
